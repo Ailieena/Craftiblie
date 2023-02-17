@@ -6,7 +6,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <!--    <link rel="stylesheet" href="https://kit.fontawesome.com/b4f670463c.css" crossorigin="anonymous">-->
     <script src="https://kit.fontawesome.com/b4f670463c.js" crossorigin="anonymous"></script>
-    <title>PROJECTS</title>
+    <script type="text/javascript" src="/public/js/search.js" defer></script>
+    <script type="text/javascript" src="/public/js/statistics.js" defer></script>
+    <script type="text/javascript" src="/public/js/search.js" defer></script>
+    <title>Projects</title>
 </head>
 
 <body>
@@ -31,15 +34,13 @@
         </div>
 
         <section class="projects">
-            foreach ($projects as $project): ?>
+            <?php foreach ($projects as $project): ?>
                 <div id="<?= $project->getId(); ?>">
                     <img src="public/uploads/<?= $project->getImage(); ?>">
                     <div>
                         <h2><?= $project->getTitle(); ?></h2>
-                        <p><?= $project->getDescription(); ?></p>
                         <div class="social-section">
                             <i class="fas fa-heart"> <?= $project->getLike(); ?></i>
-                            <i class="fas fa-minus-square"> <?= $project->getDislike(); ?></i>
                         </div>
                     </div>
                 </div>

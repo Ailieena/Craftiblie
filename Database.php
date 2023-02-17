@@ -14,7 +14,7 @@ class Database
     {
         $this->username = 'dbuser';
         $this->password = 'dbpwd';
-        $this->host = 'db';
+        $this->host = '';
         $this->database = 'dbname';
     }
 
