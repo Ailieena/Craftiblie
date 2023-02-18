@@ -32,18 +32,6 @@
                 <input placeholder="search project">
             </form>
         </div>
-
-        <section class="projects">
-            <?php foreach ($projects as $project): ?>
-                <div id="<?= $project->getId(); ?>">
-                    <div>
-                        <h2><?= $project->getTitle(); ?></h2>
-                        <div class="social-section">
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </section>
     </div>
     <div class="filter-menu">
         <form class="h3f">

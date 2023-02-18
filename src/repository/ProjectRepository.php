@@ -9,7 +9,7 @@ class ProjectRepository extends Repository
     public function getProject(int $id): ?Project
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.projects WHERE id = :id
+            SELECT * FROM project WHERE id = :id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -25,6 +25,7 @@ class ProjectRepository extends Repository
             $project['description'],
             $project['image']
         );
+        
     }
 
     public function addProject(Project $project): void
@@ -35,16 +36,17 @@ class ProjectRepository extends Repository
             VALUES (?, ?, ?, ?, ?)
         ');
 
-        //TODO you should get this value from logged user session
-        $assignedById = 1;
+    
+        session_start();
+        $userId = $_SESSION['user_id'];
 
         $stmt->execute([
             $project->getTitle(),
             $project->getDescription(),
             $project->getImage(),
-            $date->format('Y-m-d'),
-            $assignedById
+            $userId
         ]);
+
     }
 
     public function getProjects(): array
@@ -52,7 +54,7 @@ class ProjectRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM projects;
+            SELECT * FROM project;
         ');
         $stmt->execute();
         $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -63,7 +65,6 @@ class ProjectRepository extends Repository
                 $project['description'],
                 $project['image'],
                 $project['like'],
-                $project['dislike'],
                 $project['id']
             );
         }

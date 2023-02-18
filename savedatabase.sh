@@ -1,0 +1,1 @@
+pg_dump -U dbuser -h 127.0.0.1 -p 5432 -F c -b -v -f dbbackup dbname

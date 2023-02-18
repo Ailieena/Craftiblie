@@ -30,6 +30,9 @@ class SecurityController extends AppController {
         if ($user->getPassword() !== $password) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
+        
+        // session_start();
+        // $_SESSION['user_id'] = $user->getId();
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/projects");

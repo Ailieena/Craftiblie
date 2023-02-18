@@ -14,7 +14,7 @@ class Database
     {
         $this->username = 'dbuser';
         $this->password = 'dbpwd';
-        $this->host = '';
+        $this->host = 'craftible_db_1';
         $this->database = 'dbname';
     }
 
@@ -28,7 +28,6 @@ class Database
                 ["sslmode" => "prefer"]
             );
 
-            // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         } catch (PDOException $e) {

@@ -160,6 +160,7 @@ li i {
     flex-direction: column;
     flex-basis: auto;
     width: 80%;
+    height: 100%;
 }
 
 .add-project {
@@ -229,46 +230,4 @@ li i {
 
 button:hover {
     background-color: #84A98C;
-}
-
-
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    margin: 10px;
-}
-
-.projects > div {
-    width: calc(33.33% - 10px);
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.projects > div img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.projects > div h2 {
-    font-size: 24px;
-    margin: 0 0 10px;
-}
-
-.projects > div p {
-    font-size: 16px;
-    margin: 0 0 10px;
-}
-
-.projects > div .social-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 14px;
-    margin-bottom: 10px;
 }

@@ -1,0 +1,45 @@
+CREATE TABLE role (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE person (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    role INTEGER NOT NULL REFERENCES role (id)
+);
+
+
+CREATE TABLE category (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE type (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE pattern (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    pattern_type INTEGER REFERENCES type (id),
+    pattern_category INTEGER REFERENCES category (id),
+    pattern_file BYTEA NOT NULL,
+    image_file BYTEA,
+    person_id INTEGER NOT NULL REFERENCES person (id)
+);
+
+CREATE TABLE project (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    project_type INTEGER REFERENCES type (id),
+    project_category INTEGER REFERENCES category (id),
+    image_file BYTEA,
+    person_id INTEGER NOT NULL REFERENCES person (id),
+    pattern_id INTEGER NOT NULL REFERENCES pattern (id)
+);

@@ -9,9 +9,8 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function projects()
+    public function profile()
     {
-//        Get project from db and pass to projects template
-        $this->render('projects');
+        $this->render('profile');
     }
 }

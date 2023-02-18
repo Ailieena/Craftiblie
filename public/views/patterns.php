@@ -9,7 +9,7 @@
     <script type="text/javascript" src="/public/js/search.js" defer></script>
     <script type="text/javascript" src="/public/js/statistics.js" defer></script>
     <script type="text/javascript" src="/public/js/search.js" defer></script>
-    <title>Projects</title>
+    <title>Patterns</title>
 </head>
 
 <body>
@@ -29,15 +29,15 @@
     <div class="main-view">
         <div class="search-bar">
             <form>
-                <input placeholder="search project">
+                <input placeholder="search patterns">
             </form>
         </div>
 
         <section class="projects">
-            <?php foreach ($projects as $project): ?>
-                <div id="<?= $project->getId(); ?>">
+            <?php foreach ($patterns as $pattern): ?>
+                <div id="<?= $pattern->getId(); ?>">
                     <div>
-                        <h2><?= $project->getTitle(); ?></h2>
+                        <h2><?= $pattern->getTitle(); ?></h2>
                         <div class="social-section">
                         </div>
                     </div>

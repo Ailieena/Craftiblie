@@ -1,0 +1,58 @@
+body {
+    background-color: #CAD2C5;
+}
+.upload-pattern {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    color: #354F52;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  
+  .upload-pattern h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .upload-pattern label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .upload-pattern input,
+  .upload-pattern select,
+  .upload-pattern textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .upload-pattern input[type="file"] {
+    margin-bottom: 20px;
+  }
+  
+  .upload-pattern input[type="submit"] {
+    background: #354F52;
+    border-radius: 19px;
+    width: 100%;
+    border: none;
+    color: #CAD2C5;
+    margin: 1em;
+    line-height: 2.5em;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .upload-pattern input[type="submit"]:hover {
+    background-color: #84A98C;
+  }
+  

@@ -1,0 +1,42 @@
+INSERT INTO role (name) VALUES ('regular user'), ('moderator'), ('admin');
+
+INSERT INTO person (username, email, password, role)
+VALUES
+  ('user1', 'user1@example.com', 'password1', 1),
+  ('user2', 'user2@example.com', 'password2', 1),
+  ('user3', 'user3@example.com', 'password3', 2),
+  ('user4', 'user4@example.com', 'password4', 1),
+  ('user5', 'user5@example.com', 'password5', 3),
+  ('user6', 'user6@example.com', 'password6', 1),
+  ('user7', 'user7@example.com', 'password7', 1),
+  ('user8', 'user8@example.com', 'password8', 2),
+  ('user9', 'user9@example.com', 'password9', 1),
+  ('user10', 'user10@example.com', 'password10', 1);
+
+INSERT INTO category (name) VALUES 
+('Knitting'),
+('Crochet'),
+('Cross-stitch'),
+('Embroidery');
+
+INSERT INTO type (name) VALUES 
+('Clothing'),
+('Household objects'),
+('Decorations');
+
+
+-- Insert a pattern
+INSERT INTO pattern (title, description, pattern_type, pattern_category, pattern_file, image_file, person_id) VALUES 
+('Knitted scarf', 'A cozy scarf for cold weather', 1, 1, E'\\x0123456789abcdef', NULL, 1),
+('Crochet hat', 'A warm hat for winter', 2, 1, E'\\x0123456789abcdef', NULL, 3),
+('Cross-stitch pillow', 'A decorative pillow with a cross-stitch design', 3, 2, E'\\x0123456789abcdef', E'\\x0123456789abcdef', 4),
+('Embroidered tea towel', 'A tea towel with embroidered designs', 2, 4, E'\\x0123456789abcdef', E'\\x0123456789abcdef', 5);
+
+
+-- Insert a project t
+INSERT INTO project (title, description, project_type, project_category, image_file, person_id, pattern_id) VALUES 
+('Blue knitted scarf', 'A blue version of the knitted scarf pattern', 1, 1, NULL, 2, 1),
+('Purple crochet hat', 'A purple version of the crochet hat pattern', 2, 1, NULL, 6, 2),
+('Crochet granny square blanket', 'A cozy blanket made of granny squares', 2, 2, NULL, 7, 2),
+('Cross-stitch wall hanging', 'A wall hanging with a colorful cross-stitch design', 3, 2, E'\\x0123456789abcdef', 8, 3),
+('Embroidered handkerchiefs', 'A set of handkerchiefs with embroidered designs', 2, 4, E'\\x0123456789abcdef', 9, 4);

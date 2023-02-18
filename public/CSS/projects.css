@@ -1,9 +1,33 @@
+.projects {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-family: 'Rubik', sans-serif;
+}
+
+.projects > div {
+    width: 25%;
+    margin-bottom: 20px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects > div .social-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
 section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2em;
-    padding: 2em;
+    padding: 0.5em;
+    padding: 1em;
     overflow: auto;
+    text-align: center;
 }
 
 .projects>div>img {
@@ -12,9 +36,12 @@ section {
     object-fit: cover;
     border-radius: 1em 1em 0 0;
 }
-
+.projects>div>h2 {
+    text-align: center;
+}
 .projects>div>div {
-    height: 50%;
+    height: 30%;
+    width:
     margin: 1em;
     color: #52796F;
     display: flex;

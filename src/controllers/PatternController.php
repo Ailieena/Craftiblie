@@ -1,10 +1,10 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ .'/../models/Project.php';
-require_once __DIR__ .'/../repository/ProjectRepository.php';
+require_once __DIR__ .'/../models/Pattern.php';
+require_once __DIR__ .'/../repository/PatternRepository.php';
 
-class ProjectController extends AppController {
+class PatternController extends AppController {
 
     const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
@@ -16,26 +16,25 @@ class ProjectController extends AppController {
     public function __construct()
     {
         parent::__construct();
-        $this->projectRepository = new ProjectRepository();
+        $this->patternRepository = new PatternRepository();
     }
 
-    public function projects()
+    public function patterns()
     {
-        $projects = $this->projectRepository->getProjects();
-        $this->render('projects', ['projects' => $projects]);
+        $patterns = $this->patternRepository->getPatterns();
+        $this->render('patterns', ['patterns' => $patterns]);
     }
 
-    public function addProject()
+    public function addPattern()
     {
         session_start();
+        
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
             move_uploaded_file(
                 $_FILES['file']['tmp_name'],
                 dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
             );
 
-            session_start();
-            $userId = $_SESSION['user_id'];
             $project = new Project($_POST['title'], $_POST['description'], $_FILES['file']['name']);
             $this->projectRepository->addProject($project);
 

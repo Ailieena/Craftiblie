@@ -1,21 +1,28 @@
 <?php
 
-class Project
+
+class Pattern
 {
     private $title;
     private $description;
     private $image;
+    private $pattern_file;
     private $like;
-    private $pattern;
     private $id;
+    private $person_id;
+    private $type;
+    private $category;
 
-    public function __construct($title, $description, $image, $like = 0, $pattern = 0, $id = null)
+
+    public function __construct($title, $description, $image, $type, $pattern_file, $category, $id = null)
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
-        $this->like = $like;
-        $this->pattern = $pattern;
+        $this->pattern_file = $pattern_file;
+        $this->person_id = $person_id;
+        $this->type = $type;
+        $this->category = $category;
         $this->id = $id;
     }
 
@@ -49,14 +56,14 @@ class Project
         $this->image = $image;
     }
 
-    public function getPattern(): int
+    public function getLike(): int
     {
-        return $this->dislike;
+        return $this->like;
     }
 
-    public function setDPattern(int $pattern): void
+    public function setLike(int $like): void
     {
-        $this->pattern = $pattern;
+        $this->like = $like;
     }
 
     public function getId()
